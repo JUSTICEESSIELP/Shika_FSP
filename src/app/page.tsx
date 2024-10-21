@@ -5,6 +5,7 @@ import { Smile, Send, Star } from 'lucide-react';
 import Link from "next/link";
 import Image from 'next/image';
 import Modal from '@/components/commons/landing_page/Modal';
+import { DiGithubFull } from "react-icons/di";
 interface ProfileCircleProps {
   image: string;
   message?: string;
@@ -75,10 +76,12 @@ const LandingPage = ({ searchParams }: SearchParamProps)=> {
   ];
 
   return (
+    <>
     <AnimatePresence>
       {isLoading ? (
         <LoadingAnimation key="loading" />
       ) : (
+        <>
         <motion.div
           key="content"
           initial={{ opacity: 0 }}
@@ -97,7 +100,9 @@ const LandingPage = ({ searchParams }: SearchParamProps)=> {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             />
+            
           </div>
+          <h1 className="text-5xl font-bold mb-8">Shika Wallet</h1>
 
           {/* Main circular area */}
           <div className="relative aspect-square w-full max-w-[600px] mx-auto mb-8 bg-white bg-opacity-10 rounded-full p-4">
@@ -197,7 +202,7 @@ const LandingPage = ({ searchParams }: SearchParamProps)=> {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center">
+          <div className="text-center flex flex-col">
             <motion.div 
               className="space-x-4"
               initial={{ opacity: 0, y: 20 }}
@@ -205,13 +210,23 @@ const LandingPage = ({ searchParams }: SearchParamProps)=> {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <Link href="/?show=true" className="px-6 py-2 bg-yellow-300 text-violet-800 rounded-md font-bold hover:bg-yellow-400 transition-colors">Watch Video Demo</Link>
+              <a  href="https://github.com/OffGrid-Lab"><DiGithubFull className="text-center mx-auto mt-3  flex w-full  " size={50}/></a>
             </motion.div>
+
+          
           </div>
+
+      
         </motion.div>
+        </>
+        
       )}
  {show && <Modal />}
-      
+   
+
     </AnimatePresence>
+
+    </>
   );
 };
 
