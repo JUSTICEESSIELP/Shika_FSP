@@ -66,12 +66,12 @@ const LandingPage = ({ searchParams }: SearchParamProps)=> {
   }, []);
 
   const profileImages = [
-    '/api/placeholder/50/50?text=Face1',
-    '/api/placeholder/50/50?text=Face2',
-    '/api/placeholder/50/50?text=Face3',
-    '/api/placeholder/50/50?text=Face4',
-    '/api/placeholder/50/50?text=Face5',
-    '/api/placeholder/50/50?text=Face6',
+    '/images/login_fsp.png',
+    '/images/face_one.jpg',
+    '/images/face_two.jpg',
+    '/images/face_three.jpg',
+    '/images/face_four.jpg',
+   
   ];
 
   return (
